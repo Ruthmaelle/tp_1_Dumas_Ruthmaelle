@@ -33,7 +33,7 @@ function codeIsValid ($code) {
     
 return $renvoi;
 }
-
+ 
 /*function encodeCode($code) {
     $encodeCode = Sha1($code);
     return $encodeCode;
