@@ -19,7 +19,7 @@ if ($_Afficher) {
 }
 
 echo '<br>'
-$addSalt = saltedCode($m_d_p);
+$saltedCode = saltedCode($m_d_p);
 var_dump($saltedCode);
 
 echo '<br>'
