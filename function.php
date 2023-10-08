@@ -19,9 +19,8 @@ function codeIsValid ($code) {
         ]; //minimum 10 caracteres 
 
     }else {
-        $salt = '_ABC!';
-        $saltedCode = $code.$salt;
-        $encodeCode = sha1($code);
+        $saltedCode = addSalt($code);
+        $encodedCode = encodeCode($code);
         return [
             'isvalid' => true,
             'msg' => 'Votre mot de passe est valide',
@@ -33,10 +32,15 @@ function codeIsValid ($code) {
     
 return $renvoi;
 }
- 
-/*function encodeCode($code) {
+function addSalt($code) {
+    $salt = '_ABC!';
+    $saltedCode = $code . $salt;
+    return $saltedCode;
+}
+
+function encodeCode($code) {
     $encodeCode = Sha1($code);
     return $encodeCode;
 }
-*/
+
 ?>

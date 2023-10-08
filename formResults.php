@@ -18,12 +18,12 @@ if ($_Afficher) {
     }
 }
 
-echo '<br>'
-$saltedCode = saltedCode($m_d_p);
+echo '<br>';
+$saltedCode = addSalt($m_d_p);
 var_dump($saltedCode);
 
-echo '<br>'
-$encodeCode = encodeCode($m_d_p);
-var_dump($encodeCode);
+echo '<br>';
+$encodedCode = encodeCode($m_d_p);
+var_dump($encodedCode);
 
 ?>
