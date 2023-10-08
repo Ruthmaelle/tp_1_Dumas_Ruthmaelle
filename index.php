@@ -10,7 +10,7 @@
     <p>Saisissez votre mot de passe</p>
     <form method="post" action="formResults.php" >
         <label for = 'nomComplet'>Nom et Prenom: </label>
-        <input name = 'nom' type = 'text' id = 'nomComplet'> <br>
+        <input name = 'nom' type = 'text' id = 'nomComplet'> <br><br>
         <label for = 'code'>Mot de Passe: </label>
         <input for = 'mdp' type ='password' id = 'code'> <br> 
         <input type = 'submit' value= 'Envoyer'>
