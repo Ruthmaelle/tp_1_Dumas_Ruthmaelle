@@ -41,6 +41,7 @@ if ($_POST) {
         $saltedCode = addSalt($m_d_p);
         $encodedCode = encodeCode($m_d_p);
 
+        echo "<br> Bienvenue <br>"; 
         echo "<br>Le code est : " . $m_d_p;
         echo "<br> Votre mot de passe fonctionne";
         echo '<br>';
@@ -58,3 +59,4 @@ if ($_POST) {
 
 
 ?>
+<a href = "./index.php">Retour</a>

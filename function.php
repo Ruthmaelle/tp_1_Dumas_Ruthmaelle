@@ -6,6 +6,7 @@ function codeIsValid ($codeToValid) {
         'isvalid' => true,
         'msg' =>''
     ];
+
     if ($length_code < 6) {
         $renvoi = [
             'isvalid' => false,
@@ -19,8 +20,8 @@ function codeIsValid ($codeToValid) {
         ]; //minimum 10 caracteres 
 
     }else {
-        $saltedCode = addSalt($code);
-        $encodedCode = encodeCode($code);
+        $saltedCode = addSalt($codeToValid);
+        $encodeCode = encodeCode($codeToValid);
         return [
             'isvalid' => true,
             'msg' => 'Votre mot de passe est valide',
@@ -32,6 +33,7 @@ function codeIsValid ($codeToValid) {
     
 return $renvoi;
 }
+
 function addSalt($code) {
     $salt = '_ABC!';
     $saltedCode = $code.$salt;
