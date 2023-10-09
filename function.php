@@ -6,16 +6,16 @@ function codeIsValid ($codeToValid) {
         'isvalid' => true,
         'msg' =>''
     ];
-    if ($length_code <= 6) {
+    if ($length_code < 6) {
         $renvoi = [
             'isvalid' => false,
-            'msg' => 'ERREUR: Votre mot de passe est trop court'
+            'msg' => 'ERREUR: Votre mot de passe est trop court (min : 6 caracteres)'
         ]; //minimum 6 caracteres
 
-    }elseif ($length_code >= 10) {
+    }elseif ($length_code > 10) {
         $renvoi = [
             'isvalid' => false,
-            'msg' => 'EEREUR: Votre mot de passe est trop long'
+            'msg' => 'EEREUR: Votre mot de passe est trop long (max : 10 caracteres)'
         ]; //minimum 10 caracteres 
 
     }else {

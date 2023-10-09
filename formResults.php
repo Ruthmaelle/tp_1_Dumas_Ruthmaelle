@@ -31,9 +31,10 @@ var_dump($encodedCode);
 
 
 require_once("function.php");
+var_dump ($_POST);
 
 if ($_POST) {
-    $m_d_p = $_POST['Code'];
+    $m_d_p = $_POST['code'];
     $codeIsValid = codeIsValid($m_d_p);
 
     if ($codeIsValid['isvalid']) {
