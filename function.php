@@ -1,18 +1,18 @@
 <?php
 
-function codeIsValid ($code) {
-    $length_code = strlen ($code);
+function codeIsValid ($codeToValid) {
+    $length_code = strlen ($codeToValid);
     $renvoi = [
         'isvalid' => true,
         'msg' =>''
     ];
-    if ($length_code < 6) {
+    if ($length_code <= 6) {
         $renvoi = [
-            'isvalid' = false,
+            'isvalid' => false,
             'msg' => 'ERREUR: Votre mot de passe est trop court'
         ]; //minimum 6 caracteres
 
-    }elseif ($length_code >10) {
+    }elseif ($length_code >= 10) {
         $renvoi = [
             'isvalid' => false,
             'msg' => 'EEREUR: Votre mot de passe est trop long'
@@ -24,8 +24,8 @@ function codeIsValid ($code) {
         return [
             'isvalid' => true,
             'msg' => 'Votre mot de passe est valide',
-            'saltedCode' => $saltedCode // Add the salted code to the result
-            'encodeCODE' => $encodeCode // Ajoute l'encode au nouveau code 
+            'saltedCode' => $saltedCode, // Add the salted code to the result
+            'encodeCode' => $encodeCode // Ajoute l'encode au nouveau code 
         ];
 
     }
@@ -34,7 +34,7 @@ return $renvoi;
 }
 function addSalt($code) {
     $salt = '_ABC!';
-    $saltedCode = $code . $salt;
+    $saltedCode = $code.$salt;
     return $saltedCode;
 }
 

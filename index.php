@@ -12,7 +12,7 @@
         <label for = 'nomComplet'>Nom et Prenom: </label>
         <input name = 'nom' type = 'text' id = 'nomComplet'> <br><br>
         <label for = 'code'>Mot de Passe: </label>
-        <input for = 'mdp' type ='password' id = 'code'> <br> 
+        <input for = 'code' type ='password' id = 'code'> <br> 
         <input type = 'submit' value= 'Envoyer'>
     </form>
 </body>

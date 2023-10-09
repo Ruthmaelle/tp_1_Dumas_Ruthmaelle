@@ -1,13 +1,15 @@
 <?php
-require_once("function.php");
-var_dump ($_Afficher);
+/*require_once("function.php");
+var_dump ($_POST);
 
-if ($_Afficher) {
-    $m_d_p = $_Afficher ['Mot de passe'];
+if ($_POST) {
+    $m_d_p = $_POST ['Code'];
     if (empty($m_d_p)) {
         echo"<br>Le champ est vide";
-    }else {
+    } 
+    else {
         echo"<br>Mon code est : ".$m_d_p;
+        echo "<br> Votre mot de passe fonctionne";
     }
     $codeIsValid = codeIsValid($m_d_p);
     echo '<br>';
@@ -25,5 +27,33 @@ var_dump($saltedCode);
 echo '<br>';
 $encodedCode = encodeCode($m_d_p);
 var_dump($encodedCode);
+*/
+
+
+require_once("function.php");
+
+if ($_POST) {
+    $m_d_p = $_POST['Code'];
+    $codeIsValid = codeIsValid($m_d_p);
+
+    if ($codeIsValid['isvalid']) {
+        $saltedCode = addSalt($m_d_p);
+        $encodedCode = encodeCode($m_d_p);
+
+        echo "<br>Le code est : " . $m_d_p;
+        echo "<br> Votre mot de passe fonctionne";
+        echo '<br>';
+        var_dump($codeIsValid);
+        echo '<br>';
+        var_dump($saltedCode);
+        echo '<br>';
+        var_dump($encodedCode);
+    } else {
+        echo "<br>Votre mot de passe n'est pas valide: " . $codeIsValid['msg'];
+    }
+} else {
+    echo "Form not submitted.";
+}
+
 
 ?>
