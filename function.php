@@ -11,12 +11,14 @@ function codeIsValid ($codeToValid) {
         $renvoi = [
             'isvalid' => false,
             'msg' => 'ERREUR: Votre mot de passe est trop court (min : 6 caracteres)'
+           
         ]; //minimum 6 caracteres
 
     }elseif ($length_code > 10) {
         $renvoi = [
             'isvalid' => false,
             'msg' => 'EEREUR: Votre mot de passe est trop long (max : 10 caracteres)'
+            
         ]; //minimum 10 caracteres 
 
     }else {

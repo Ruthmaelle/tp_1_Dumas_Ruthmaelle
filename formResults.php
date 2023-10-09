@@ -55,8 +55,11 @@ if ($_POST) {
     }
 } else {
     echo "Form not submitted.";
+    echo '<br>';
 }
 
 
 ?>
+<br>
+<br> 
 <a href = "./index.php">Retour</a>
