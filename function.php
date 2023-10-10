@@ -36,6 +36,22 @@ function codeIsValid ($codeToValid) {
 return $renvoi;
 }
 
+function verifIsValid($verifToValid, $codeToValid) {
+    $length_verif = strlen($verifToValid);
+    $length_code = strlen ($codeToValid);
+    $reponse = [
+        'isvalid' => true,
+        'msg' =>''
+    ];
+    if ($length_verif != $length_code & $codeToValid !== $verifToValid ) {
+        $reponse=[
+            'isvalid'=>false,
+            'msg'=>'Vos mot de passe ne sont pas similaires'
+        ];
+    } 
+return $reponse; 
+}
+
 function addSalt($code) {
     $salt = '_ABC!';
     $saltedCode = $code.$salt;
