@@ -3,7 +3,7 @@
 var_dump ($_POST);
 
 if ($_POST) {
-    $m_d_p = $_POST ['Code'];
+    $m_d_p = $_POST ['code'];
     if (empty($m_d_p)) {
         echo"<br>Le champ est vide";
     } 
@@ -14,7 +14,7 @@ if ($_POST) {
     $codeIsValid = codeIsValid($m_d_p);
     echo '<br>';
     var_dump($codeIsValid);
-    if(!$codeIsValid['isValid']) {
+    if(!$codeIsValid['isvalid']) {
         //Prend en compte si le code n'est pas valide 
         echo "<br>Votre code n'est pas valide";
     }
@@ -47,8 +47,10 @@ if ($_POST) {
         echo '<br>';
         var_dump($codeIsValid);
         echo '<br>';
+        echo "<br> Ceci est votre code en mode 'SALT'";
         var_dump($saltedCode);
         echo '<br>';
+        echo"<br> Ceci est votre mot de passe encrypte";
         var_dump($encodedCode);
     } else {
         echo "<br>Votre mot de passe n'est pas valide: " . $codeIsValid['msg'];
@@ -56,8 +58,8 @@ if ($_POST) {
 } else {
     echo "Form not submitted.";
     echo '<br>';
+    //pour eviter tout bug 
 }
-
 
 ?>
 <br>
