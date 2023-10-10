@@ -1,5 +1,5 @@
 <?php
-/*require_once("function.php");
+/*require_once("function.php"); //fonctionne
 var_dump ($_POST);
 
 if ($_POST) {
@@ -30,7 +30,7 @@ var_dump($encodedCode);
 */
 
 
-require_once("function.php");
+require_once("function.php"); //fonctionne
 var_dump ($_POST);
 
 if ($_POST) {
@@ -55,13 +55,13 @@ if ($_POST) {
     } else {
         echo "<br>Votre mot de passe n'est pas valide: " . $codeIsValid['msg'];
     }
-} else {
+} else { //pour eviter tout bug 
     echo "Form not submitted.";
     echo '<br>';
-    //pour eviter tout bug 
+    
 }
 
 ?>
 <br>
 <br> 
-<a href = "./index.php">Retour</a>
+<a href = "./index.php">Retour</a> 

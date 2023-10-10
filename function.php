@@ -27,8 +27,8 @@ function codeIsValid ($codeToValid) {
         return [
             'isvalid' => true,
             'msg' => 'Votre mot de passe est valide',
-            'saltedCode' => $saltedCode, // Add the salted code to the result
-            'encodeCode' => $encodeCode // Ajoute l'encode au nouveau code 
+            'saltedCode' => $saltedCode, // Add the salted code to the result et appel la fonction addSalt
+            'encodeCode' => $encodeCode // Ajoute l'encodage au nouveau code et appel la fonction encodeCode
         ];
 
     }
